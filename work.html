@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Check out the creative projects by Pixel & Co - UI/UX design, web development, and branding.">
+    <title>Pixel & Co - Our Work</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__logo">Pixel<span>&</span>Co</a>
+      <button class="navbar__toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+            <ul class="navbar__menu">
+                <li><a href="index.html" class="navbar__link">Home</a></li>
+                <li><a href="index.html#services" class="navbar__link">Services</a></li>
+                <li><a href="work.html" class="navbar__link navbar__link--active">Work</a></li>
+                <li><a href="index.html#testimonials" class="navbar__link">Testimonials</a></li>
+                <li><a href="contact.html" class="navbar__link navbar__link--cta">Start a Project</a></li>
+            </ul>
+    </div>
+  </nav>
+
+  <header class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Our Work</h1>
+      <p class="page-hero__subtitle">Every project is a story. Here are some of our favorites.</p>
+    </div>
+  </header>
+
+  <section class="portfolio">
+      <div class="container">
+          <div class="portfolio__filters">
+              <button class="portfolio__filter portfolio__filter--active" data-filter="all">All</button>
+              <button class="portfolio__filter" data-filter="web">Web</button>
+              <button class="portfolio__filter" data-filter="mobile">Mobile</button>
+              <button class="portfolio__filter" data-filter="branding">Branding</button>
+          </div>
+          <div class="portfolio__grid">
+              <div class="portfolio__item" data-category="web">
+                  <div class="portfolio__thumb" style="background: #DF301C;">
+                      <span class="portfolio__label">Web Design</span>
+                  </div>
+                  <h3 class="portfolio__title">Bloom E-Commerce</h3>
+                  <p class="portfolio__category">UI/UX Design</p>
+              </div>
+              <div class="portfolio__item" data-category="mobile">
+                  <div class="portfolio__thumb" style="background: #00B7CD;">
+                      <span class="portfolio__label">Mobile App</span>
+                  </div>
+                  <h3 class="portfolio__title">FitTrack Pro</h3>
+                  <p class="portfolio__category">Mobile Development</p>
+              </div>
+              <div class="portfolio__item" data-category="branding">
+                  <div class="portfolio__thumb" style="background: #FF9100;">
+                      <span class="portfolio__label">Branding</span>
+                  </div>
+                  <h3 class="portfolio__title">Nova Studios</h3>
+                  <p class="portfolio__category">Brand Identity</p>
+              </div>
+              <div class="portfolio__item" data-category="web">
+                  <div class="portfolio__thumb" style="background: #1a1a2e;">
+                      <span class="portfolio__label">Web Design</span>
+                  </div>
+                  <h3 class="portfolio__title">Horizon Finance</h3>
+                  <p class="portfolio__category">Web Development</p>
+              </div>
+              <div class="portfolio__item" data-category="mobile">
+                  <div class="portfolio__thumb" style="background: #FF9100;">
+                      <span class="portfolio__label">Mobile App</span>
+                  </div>
+                  <h3 class="portfolio__title">Wanderlust</h3>
+                  <p class="portfolio__category">Mobile Development</p>
+              </div>
+              <div class="portfolio__item" data-category="branding">
+                  <div class="portfolio__thumb" style="background: #DF301C;">
+                      <span class="portfolio__label">Branding</span>
+                  </div>
+                  <h3 class="portfolio__title">Ember Coffee</h3>
+                  <p class="portfolio__category">Brand Identity</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <footer class="footer">
+      <div class="container footer__inner">
+          <div class="footer__brand">
+              <a href="index.html" class="footer__logo">Pixel<span>&</span>Co</a>
+              <p class="footer__tagline">Crafting digital experiences that leave a mark.</p>
+          </div>
+          <div class="footer__links">
+              <h4 class="footer__heading">Quick Links</h4>
+              <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="index.html#services">Services</a></li>
+                  <li><a href="work.html">Work</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+              </ul>
+          </div>
+          <div class="footer__contact">
+              <h4 class="footer__heading">Get in Touch</h4>
+              <p>hello@pixelandco.com</p>
+              <p>+62 812 3456 7890</p>
+              <p>Jakarta, Indonesia</p>
+          </div>
+      </div>
+      <div class="footer__bottom">
+          <div class="container">
+              <p>&copy; 2026 Pixel & Co. All rights reserved.</p>
+          </div>
+      </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with Pixel & Co creative agency. Let's discuss your next project.">
+    <title>Pixel & Co - Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container navbar__inner">
+            <a href="index.html" class="navbar__logo">Pixel<span>&</span>Co</a>
+            <button class="navbar__toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="navbar__menu">
+                <li><a href="index.html" class="navbar__link">Home</a></li>
+                <li><a href="index.html#services" class="navbar__link">Services</a></li>
+                <li><a href="work.html" class="navbar__link">Work</a></li>
+                <li><a href="index.html#testimonials" class="navbar__link">Testimonials</a></li>
+                <li><a href="contact.html" class="navbar__link navbar__link--active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-hero">
+        <div class="container">
+            <h1 class="page-hero__title">Let's Talk</h1>
+            <p class="page-hero__subtitle">Have a project in mind? We'd love to hear about it.</p>
+        </div>
+    </header>
+
+    <section class="contact">
+        <div class="container contact__inner">
+            <div class="contact__form-wrap">
+                <form class="contact__form" id="contactForm">
+                    <div class="contact__field">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        <span class="contact__error"></span>
+                    </div>
+                    <div class="contact__field">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        <span class="contact__error"></span>
+                    </div>
+                    <div class="contact__field">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject" required>
+                            <option value="" disabled selected>Choose a topic</option>
+                            <option value="web">Web Design</option>
+                            <option value="mobile">Mobile App</option>
+                            <option value="branding">Branding</option>
+                            <option value="other">Something Else</option>
+                        </select>
+                        <span class="contact__error"></span>
+                    </div>
+                    <div class="contact__field">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                        <span class="contact__error"></span>
+                    </div>
+                    <div class="contact__success">Message sent successfully! We'll get back to you soon.</div>
+                    <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+                </form>
+            </div>
+            <div class="contact__info">
+                <div class="contact__info-card">
+                    <h3 class="contact__info-title">Email Us</h3>
+                    <p>hello@pixelandco.com</p>
+                </div>
+                <div class="contact__info-card">
+                    <h3 class="contact__info-title">Call Us</h3>
+                    <p>+62 812 3456 7890</p>
+                </div>
+                <div class="contact__info-card">
+                    <h3 class="contact__info-title">Visit Us</h3>
+                    <p>Jakarta, Indonesia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo">Pixel<span>&</span>Co</a>
+                <p class="footer__tagline">Crafting digital experiences that leave a mark.</p>
+            </div>
+            <div class="footer__links">
+                <h4 class="footer__heading">Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#services">Services</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer__contact">
+                <h4 class="footer__heading">Get in Touch</h4>
+                <p>hello@pixelandco.com</p>
+                <p>+62 812 3456 7890</p>
+                <p>Jakarta, Indonesia</p>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <p>&copy; 2026 Pixel & Co. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
