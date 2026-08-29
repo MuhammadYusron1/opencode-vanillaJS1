@@ -1,5 +1,5 @@
 // ============================================
-// MOBILE NAV TOGGLE
+// MOBILE NAV TOGGLE - Hamburger menu open/close on mobile
 // ============================================
 const navbarToggle = document.querySelector('.navbar__toggle');
 const navbarMenu = document.querySelector('.navbar__menu');
@@ -10,6 +10,7 @@ if (navbarToggle && navbarMenu) {
         navbarMenu.classList.toggle('active');
     });
 
+    // Close mobile menu when a nav link is clicked
     document.querySelectorAll('.navbar__link').forEach(link => {
         link.addEventListener('click', () => {
             navbarToggle.classList.remove('active');
@@ -19,7 +20,7 @@ if (navbarToggle && navbarMenu) {
 }
 
 // ============================================
-// NAVBAR SCROLL EFFECT
+// NAVBAR SCROLL EFFECT - Add 'scrolled' class when page scrolls > 50px
 // ============================================
 const navbar = document.querySelector('.navbar');
 
@@ -32,10 +33,10 @@ const handleNavbarScroll = () => {
 };
 
 window.addEventListener('scroll', handleNavbarScroll);
-handleNavbarScroll();
+handleNavbarScroll(); // Run once on load in case page is already scrolled
 
 // ============================================
-// SMOOTH SCROLL FOR ANCHOR LINKS
+// SMOOTH SCROLL FOR ANCHOR LINKS - Smooth scroll to #id targets
 // ============================================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -57,7 +58,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ============================================
-// PORTFOLIO FILTER (work.html only)
+// PORTFOLIO FILTER (work.html only) - Filter projects by category
 // ============================================
 const filterButtons = document.querySelectorAll('.portfolio__filter');
 const portfolioItems = document.querySelectorAll('.portfolio__item');
@@ -65,11 +66,13 @@ const portfolioItems = document.querySelectorAll('.portfolio__item');
 if (filterButtons.length > 0 && portfolioItems.length > 0) {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
+            // Update active button state
             filterButtons.forEach(btn => btn.classList.remove('portfolio__filter--active'));
             button.classList.add('portfolio__filter--active');
 
             const filterValue = button.getAttribute('data-filter');
 
+            // Show/hide items based on category
             portfolioItems.forEach(item => {
                 const category = item.getAttribute('data-category');
 
@@ -85,7 +88,7 @@ if (filterButtons.length > 0 && portfolioItems.length > 0) {
 }
 
 // ============================================
-// CONTACT FORM VALIDATION
+// CONTACT FORM VALIDATION - Validate required fields & email format
 // ============================================
 const contactForm = document.getElementById('contactForm');
 
@@ -124,10 +127,12 @@ if (contactForm) {
         }
     });
 
+    // Email format validation helper
     const isValidEmail = (email) => {
         return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     };
 
+    // Clear error state on user input
     contactForm.querySelectorAll('input, select, textarea').forEach(input => {
         input.addEventListener('input', () => {
             input.closest('.contact__field').classList.remove('error');
@@ -136,7 +141,7 @@ if (contactForm) {
 }
 
 // ============================================
-// SCROLL REVEAL ANIMATIONS
+// SCROLL REVEAL ANIMATIONS - Fade-in elements as they enter viewport
 // ============================================
 const revealElements = document.querySelectorAll(
     '.services__card, .work__card, .portfolio__item, .testimonials__card, .contact__info-card'
@@ -155,6 +160,7 @@ const revealObserver = new IntersectionObserver((entries) => {
     rootMargin: '0px 0px -50px 0px'
 });
 
+// Initialize reveal elements with staggered delays
 revealElements.forEach((el, index) => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -163,7 +169,7 @@ revealElements.forEach((el, index) => {
 });
 
 // ============================================
-// FADE IN KEYFRAME (for portfolio filter)
+// FADE IN KEYFRAME (for portfolio filter) - CSS animation injected via JS
 // ============================================
 const style = document.createElement('style');
 style.textContent = `
@@ -173,3 +179,8 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// DYNAMIC COPYRIGHT YEAR - Auto-update footer year
+// ============================================
+document.getElementById('currentYear').textContent = new Date().getFullYear();

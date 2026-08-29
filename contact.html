@@ -5,20 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with Pixel & Co creative agency. Let's discuss your next project.">
     <title>Pixel & Co - Contact</title>
+    <!-- Preconnect to Google Fonts for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Inter font family with multiple weights -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- ============================================
+         NAVIGATION BAR - Fixed top navigation with logo, menu links, and mobile toggle
+         ============================================ -->
     <nav class="navbar">
         <div class="container navbar__inner">
+            <!-- Logo with styled ampersand -->
             <a href="index.html" class="navbar__logo">Pixel<span>&</span>Co</a>
+            <!-- Mobile menu toggle button (hamburger) -->
             <button class="navbar__toggle" aria-label="Toggle menu">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <!-- Navigation menu with links (Contact is active) -->
             <ul class="navbar__menu">
                 <li><a href="index.html" class="navbar__link">Home</a></li>
                 <li><a href="index.html#services" class="navbar__link">Services</a></li>
@@ -29,6 +38,9 @@
         </div>
     </nav>
 
+    <!-- ============================================
+         PAGE HERO - Simplified hero for sub-pages with title and subtitle
+         ============================================ -->
     <header class="page-hero">
         <div class="container">
             <h1 class="page-hero__title">Let's Talk</h1>
@@ -36,8 +48,12 @@
         </div>
     </header>
 
+    <!-- ============================================
+         CONTACT SECTION - Form on left, contact info cards on right
+         ============================================ -->
     <section class="contact">
         <div class="container contact__inner">
+            <!-- Contact form with validation -->
             <div class="contact__form-wrap">
                 <form class="contact__form" id="contactForm">
                     <div class="contact__field">
@@ -66,10 +82,12 @@
                         <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
                         <span class="contact__error"></span>
                     </div>
+                    <!-- Success message (hidden by default) -->
                     <div class="contact__success">Message sent successfully! We'll get back to you soon.</div>
                     <button type="submit" class="btn btn--primary btn--full">Send Message</button>
                 </form>
             </div>
+            <!-- Contact info cards -->
             <div class="contact__info">
                 <div class="contact__info-card">
                     <h3 class="contact__info-title">Email Us</h3>
@@ -87,12 +105,17 @@
         </div>
     </section>
 
+    <!-- ============================================
+         FOOTER - Site footer with brand, quick links, contact info, and copyright
+         ============================================ -->
     <footer class="footer">
         <div class="container footer__inner">
+            <!-- Brand section with logo and tagline -->
             <div class="footer__brand">
                 <a href="index.html" class="footer__logo">Pixel<span>&</span>Co</a>
                 <p class="footer__tagline">Crafting digital experiences that leave a mark.</p>
             </div>
+            <!-- Quick navigation links -->
             <div class="footer__links">
                 <h4 class="footer__heading">Quick Links</h4>
                 <ul>
@@ -102,6 +125,7 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
+            <!-- Contact information -->
             <div class="footer__contact">
                 <h4 class="footer__heading">Get in Touch</h4>
                 <p>hello@pixelandco.com</p>
@@ -109,13 +133,15 @@
                 <p>Jakarta, Indonesia</p>
             </div>
         </div>
+        <!-- Copyright notice with dynamic year -->
         <div class="footer__bottom">
             <div class="container">
-                <p>&copy; 2026 Pixel & Co. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> Pixel & Co. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Main JavaScript file -->
     <script src="js/main.js"></script>
 </body>
 </html>

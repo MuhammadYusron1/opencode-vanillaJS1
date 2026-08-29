@@ -1,43 +1,43 @@
 /* ============================================
-   DESIGN TOKENS
+   DESIGN TOKENS - CSS custom properties for colors, fonts, spacing
    ============================================ */
 :root {
-    --color-primary: #DF301C;
-    --color-secondary: #FF9100;
-    --color-light: #FFF1D1;
-    --color-accent: #00B7CD;
-    --color-dark: #1a1a2e;
-    --color-text: #333333;
-    --color-white: #ffffff;
+    --color-primary: #DF301C;      /* Main brand color (red-orange) */
+    --color-secondary: #FF9100;    /* Secondary brand color (orange) */
+    --color-light: #FFF1D1;        /* Light background for sections */
+    --color-accent: #00B7CD;       /* Accent color (teal) */
+    --color-dark: #1a1a2e;         /* Dark background (near black) */
+    --color-text: #333333;         /* Default text color */
+    --color-white: #ffffff;        /* Pure white */
 
-    --font-main: 'Inter', sans-serif;
+    --font-main: 'Inter', sans-serif;  /* Primary font family */
 
-    --container-max: 1200px;
-    --section-padding: 100px 0;
-    --border-radius: 12px;
-    --transition: all 0.3s ease;
+    --container-max: 1200px;       /* Max content width */
+    --section-padding: 100px 0;    /* Vertical section spacing */
+    --border-radius: 12px;         /* Rounded corner radius */
+    --transition: all 0.3s ease;   /* Default transition timing */
 }
 
 /* ============================================
-   RESET & BASE
+   RESET & BASE - Normalize browser defaults & set base styles
    ============================================ */
 *,
 *::before,
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Include padding/border in element width */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Smooth scroll for anchor links */
 }
 
 body {
     font-family: var(--font-main);
     color: var(--color-text);
     line-height: 1.6;
-    background: var(--color-dark);
+    background: var(--color-dark); /* Dark theme default */
 }
 
 a {
@@ -51,18 +51,19 @@ ul {
 
 img {
     max-width: 100%;
-    display: block;
+    display: block; /* Remove inline gap */
 }
 
 /* ============================================
-   UTILITIES
+   UTILITIES - Reusable helper classes
    ============================================ */
 .container {
     max-width: var(--container-max);
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 0 auto;    /* Center horizontally */
+    padding: 0 20px;   /* Side padding on mobile */
 }
 
+/* Section heading - used across all sections */
 .section-title {
     font-size: 2.5rem;
     font-weight: 800;
@@ -70,6 +71,7 @@ img {
     margin-bottom: 12px;
 }
 
+/* Section subheading - used across all sections */
 .section-subtitle {
     font-size: 1.1rem;
     text-align: center;
@@ -81,12 +83,12 @@ img {
 }
 
 /* ============================================
-   BUTTONS
+   BUTTONS - Base button + 4 variants (primary, text, outline, full-width)
    ============================================ */
 .btn {
     display: inline-block;
     padding: 14px 32px;
-    border-radius: 50px;
+    border-radius: 50px;        /* Pill shape */
     font-weight: 600;
     font-size: 1rem;
     transition: var(--transition);
@@ -94,6 +96,7 @@ img {
     border: 2px solid transparent;
 }
 
+/* Primary CTA - solid brand color */
 .btn--primary {
     background: var(--color-primary);
     color: var(--color-white);
@@ -101,11 +104,12 @@ img {
 }
 
 .btn--primary:hover {
-    background: #c02818;
+    background: #c02818;        /* Darker shade on hover */
     border-color: #c02818;
-    transform: translateY(-2px);
+    transform: translateY(-2px); /* Lift effect */
 }
 
+/* Text button - transparent with accent color */
 .btn--text {
     background: transparent;
     color: var(--color-accent);
@@ -113,18 +117,20 @@ img {
 }
 
 .btn--text:hover {
-    color: #009ab0;
+    color: #009ab0;             /* Darker teal on hover */
 }
 
+/* Animated arrow in text button */
 .btn--text span {
     margin-left: 4px;
     transition: var(--transition);
 }
 
 .btn--text:hover span {
-    margin-left: 10px;
+    margin-left: 10px;          /* Arrow slides right on hover */
 }
 
+/* Outline button - white border for dark backgrounds */
 .btn--outline {
     background: transparent;
     color: var(--color-white);
@@ -137,24 +143,26 @@ img {
     transform: translateY(-2px);
 }
 
+/* Full-width button for forms */
 .btn--full {
     width: 100%;
     text-align: center;
 }
 
 /* ============================================
-   NAVBAR
+   NAVBAR - Fixed top navigation with scroll effect & mobile drawer
    ============================================ */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 1000;              /* Above all content */
     padding: 20px 0;
     transition: var(--transition);
 }
 
+/* Scrolled state - solid background + shadow */
 .navbar.scrolled {
     background: var(--color-dark);
     padding: 12px 0;
@@ -174,7 +182,7 @@ img {
 }
 
 .navbar__logo span {
-    color: var(--color-primary);
+    color: var(--color-primary); /* Colored ampersand */
 }
 
 .navbar__menu {
@@ -191,7 +199,7 @@ img {
     font-weight: 500;
     font-size: 0.95rem;
     transition: var(--transition);
-    white-space: nowrap;
+    white-space: nowrap;        /* Prevent wrapping */
 }
 
 .navbar__link:hover,
@@ -200,6 +208,7 @@ img {
     background: rgba(255, 255, 255, 0.1);
 }
 
+/* CTA button in nav */
 .navbar__link--cta {
     background: var(--color-primary);
     color: var(--color-white);
@@ -209,6 +218,7 @@ img {
     background: #c02818;
 }
 
+/* Mobile hamburger toggle (hidden on desktop) */
 .navbar__toggle {
     display: none;
     flex-direction: column;
@@ -225,16 +235,17 @@ img {
     height: 3px;
     background: var(--color-white);
     border-radius: 2px;
-    transition: var(--transition);
+    transition: var(--transition); /* For hamburger->X animation */
 }
 
 /* ============================================
-   HERO
+   HERO - Full-screen landing section with gradient background
    ============================================ */
 .hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
+    /* Layered radial gradients for depth */
     background: radial-gradient(ellipse at 70% 50%, rgba(223, 48, 28, 0.15) 0%, transparent 60%),
                 radial-gradient(ellipse at 20% 80%, rgba(0, 183, 205, 0.1) 0%, transparent 50%),
                 var(--color-dark);
@@ -245,7 +256,7 @@ img {
 .hero__content {
     position: relative;
     z-index: 2;
-    padding-top: 80px;
+    padding-top: 80px; /* Offset for fixed navbar */
 }
 
 .hero__title {
@@ -254,7 +265,7 @@ img {
     color: var(--color-white);
     line-height: 1.1;
     margin-bottom: 24px;
-    letter-spacing: -2px;
+    letter-spacing: -2px;     /* Tight tracking for large text */
 }
 
 .hero__subtitle {
@@ -272,10 +283,10 @@ img {
 }
 
 /* ============================================
-   PAGE HERO (sub-pages)
+   PAGE HERO (sub-pages) - Compact hero for work/contact pages
    ============================================ */
 .page-hero {
-    padding: 160px 0 60px;
+    padding: 160px 0 60px;    /* Top padding clears fixed navbar */
     text-align: center;
     background: radial-gradient(ellipse at 50% 50%, rgba(223, 48, 28, 0.1) 0%, transparent 60%),
                 var(--color-dark);
@@ -297,7 +308,7 @@ img {
 }
 
 /* ============================================
-   SERVICES
+   SERVICES - 4-column grid of service cards on light background
    ============================================ */
 .services {
     background: var(--color-light);
@@ -324,9 +335,10 @@ img {
     border-radius: var(--border-radius);
     text-align: center;
     transition: var(--transition);
-    border-top: 4px solid var(--color-primary);
+    border-top: 4px solid var(--color-primary); /* Colored top border */
 }
 
+/* Alternate border colors for each card */
 .services__card:nth-child(2) {
     border-top-color: var(--color-secondary);
 }
@@ -363,7 +375,7 @@ img {
 }
 
 /* ============================================
-   FEATURED WORK (index.html)
+   FEATURED WORK (index.html) - 3 project cards on white background
    ============================================ */
 .work {
     padding: var(--section-padding);
@@ -405,6 +417,7 @@ img {
     overflow: hidden;
 }
 
+/* Dark gradient overlay for label readability */
 .work__thumb::after {
     content: '';
     position: absolute;
@@ -416,7 +429,7 @@ img {
     position: relative;
     z-index: 2;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);   /* Frosted glass effect */
     color: var(--color-white);
     padding: 6px 14px;
     border-radius: 50px;
@@ -447,7 +460,7 @@ img {
 }
 
 /* ============================================
-   PORTFOLIO (work.html)
+   PORTFOLIO (work.html) - Filterable project grid with category tabs
    ============================================ */
 .portfolio {
     padding: 60px 0 var(--section-padding);
@@ -504,6 +517,7 @@ img {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
+/* Hidden state for filter (JS toggles this class) */
 .portfolio__item.hidden {
     display: none;
 }
@@ -517,6 +531,7 @@ img {
     overflow: hidden;
 }
 
+/* Dark gradient overlay for label readability */
 .portfolio__thumb::after {
     content: '';
     position: absolute;
@@ -528,7 +543,7 @@ img {
     position: relative;
     z-index: 2;
     background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);   /* Frosted glass effect */
     color: var(--color-white);
     padding: 6px 14px;
     border-radius: 50px;
@@ -550,7 +565,7 @@ img {
 }
 
 /* ============================================
-   TESTIMONIALS
+   TESTIMONIALS - 3-column grid of client quote cards
    ============================================ */
 .testimonials {
     padding: var(--section-padding);
@@ -592,7 +607,7 @@ img {
     position: absolute;
     top: 20px;
     left: 30px;
-    opacity: 0.3;
+    opacity: 0.3;               /* Decorative background quote mark */
 }
 
 .testimonials__text {
@@ -601,7 +616,7 @@ img {
     line-height: 1.8;
     margin-bottom: 24px;
     position: relative;
-    z-index: 2;
+    z-index: 2;                 /* Above decorative quote */
 }
 
 .testimonials__author {
@@ -620,7 +635,7 @@ img {
     color: var(--color-white);
     font-weight: 700;
     font-size: 1.1rem;
-    flex-shrink: 0;
+    flex-shrink: 0;             /* Prevent avatar shrinking */
 }
 
 .testimonials__name {
@@ -635,7 +650,7 @@ img {
 }
 
 /* ============================================
-   CONTACT
+   CONTACT - Form on left (1.5fr), info cards on right (1fr)
    ============================================ */
 .contact {
     padding: 80px 0 var(--section-padding);
@@ -683,7 +698,7 @@ img {
     outline: none;
     border-color: var(--color-primary);
     background: var(--color-white);
-    box-shadow: 0 0 0 4px rgba(223, 48, 28, 0.1);
+    box-shadow: 0 0 0 4px rgba(223, 48, 28, 0.1); /* Focus ring */
 }
 
 .contact__field textarea {
@@ -706,7 +721,7 @@ img {
     background: var(--color-light);
     padding: 30px;
     border-radius: var(--border-radius);
-    border-left: 4px solid var(--color-primary);
+    border-left: 4px solid var(--color-primary); /* Colored left border */
 }
 
 .contact__info-card:nth-child(2) {
@@ -729,6 +744,7 @@ img {
     color: #666;
 }
 
+/* Error state - hidden by default, shown via JS */
 .contact__error {
     font-size: 0.8rem;
     color: var(--color-primary);
@@ -746,6 +762,7 @@ img {
     display: block;
 }
 
+/* Success message - hidden by default, shown via JS */
 .contact__success {
     background: #e8f5e9;
     color: #2e7d32;
@@ -761,7 +778,7 @@ img {
 }
 
 /* ============================================
-   FOOTER
+   FOOTER - Dark footer with 3-column layout (brand, links, contact)
    ============================================ */
 .footer {
     background: #12121f;
@@ -833,11 +850,12 @@ img {
 }
 
 /* ============================================
-   MEDIA QUERIES
+   MEDIA QUERIES - Responsive breakpoints
    ============================================ */
+/* Tablet landscape and below */
 @media (max-width: 1024px) {
     .services__grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for services */
     }
 
     .hero__title {
@@ -845,11 +863,13 @@ img {
     }
 }
 
+/* Tablet portrait and mobile */
 @media (max-width: 768px) {
+    /* Mobile navbar drawer */
     .navbar__menu {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -100%;           /* Hidden off-screen */
         width: 280px;
         height: 100vh;
         background: var(--color-dark);
@@ -862,7 +882,7 @@ img {
     }
 
     .navbar__menu.active {
-        right: 0;
+        right: 0;               /* Slide in when active */
     }
 
     .navbar__link {
@@ -872,9 +892,10 @@ img {
     }
 
     .navbar__toggle {
-        display: flex;
+        display: flex;          /* Show hamburger */
     }
 
+    /* Hamburger to X animation */
     .navbar__toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -901,6 +922,7 @@ img {
         align-items: flex-start;
     }
 
+    /* 2-column grids on tablet */
     .work__grid,
     .portfolio__grid,
     .testimonials__grid {
@@ -918,6 +940,7 @@ img {
 }
 
 @media (max-width: 480px) {
+    /* Mobile: reduce section padding */
     :root {
         --section-padding: 70px 0;
     }
@@ -934,6 +957,7 @@ img {
         font-size: 2rem;
     }
 
+    /* Stack all grids to single column */
     .services__grid,
     .work__grid,
     .portfolio__grid,
